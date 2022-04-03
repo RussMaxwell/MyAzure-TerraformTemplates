@@ -1,3 +1,10 @@
+locals {
+    subscriptionID     = "<addSubscriptionID>"
+    tenantID           = "<tenantID>"
+    vmPasswrd          = "<enterVMPassword>"
+}
+
+
 terraform {
   required_providers {
     azurerm = {
@@ -8,29 +15,10 @@ terraform {
 }
 
 
-#Required Input -- Enter your Azure Subscription ID#
-variable "subscriptionID" {
-    type=string
-    default = ""
-}
-
-#Required Input -- Enter your Azure AD Tenant ID#
-variable "tenantID" {
-    type=string
-    default = ""
-}
-
-#Required Input -- Enter your password for Guest OS access#
-#Important Note: this is not secure and recommended to use Azure Key Vault#
-variable "vmPasswrd" {
-    type=string
-    default=""
-}
-
 provider "azurerm" {
   # Configuration options
-  subscription_id = var.subscriptionID
-  tenant_id       = var.tenantID
+  subscription_id = local.subscriptionID
+  tenant_id       = local.tenantID
   features {}
 }
 
@@ -191,7 +179,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   location              = "East US"
   resource_group_name   = azurerm_resource_group.ContosoEast.name
   admin_username = "demousr"
-  admin_password = var.vmPasswrd
+  admin_password = local.vmPasswrd
   network_interface_ids = [azurerm_network_interface.eastinterface.id]
   size                  = "Standard_DS1_v2"
  
