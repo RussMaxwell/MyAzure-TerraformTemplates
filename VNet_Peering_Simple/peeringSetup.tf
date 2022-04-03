@@ -1,38 +1,7 @@
-#Required Input -- Enter your Azure Subscription ID#
-variable "subscriptionID" {
-    type=string
-    default = ""
-}
-
-#Required Input -- Enter your Azure AD Tenant ID#
-variable "tenantID" {
-    type=string
-    default = ""
+locals {
+    vmPasswrd = "<insert_GuestOS_Password>"
 }
  
-#Required Input -- Enter your password for Guest OS access#
-#Important Note: this is not secure and recommended to use Azure Key Vault#
-variable "vmPasswrd" {
-    type=string
-    default=""
-}
-
-
-terraform {
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = ">=2.99.0"
-    }
-  }
-}
-
-provider "azurerm" {
-  # Configuration options
-  subscription_id = var.subscriptionID
-  tenant_id       = var.tenantID
-  features {}
-}
 
 
 # Create a resource group in East US
@@ -218,7 +187,7 @@ resource "azurerm_virtual_machine" "eastvm" {
   os_profile {
     computer_name  = "contosoeastvm"
     admin_username = "demousr"
-    admin_password = var.vmPasswrd
+    admin_password = local.vmPasswrd
   }
  
  os_profile_windows_config {}
@@ -248,7 +217,7 @@ resource "azurerm_virtual_machine" "westvm" {
   os_profile {
     computer_name  = "contosowestvm"
     admin_username = "demousr"
-    admin_password = var.vmPasswrd
+    admin_password = local.vmPasswrd
   }
 
   os_profile_windows_config {}
