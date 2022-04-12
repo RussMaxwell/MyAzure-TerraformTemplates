@@ -8,7 +8,7 @@ The following components are provisioned in Azure :
 
 - 2 Resource Groups
 - 2 Virtual Networks both peered
-- 2 public IP addresses 
+- 2 public IP addresses
 
 ## Instructions for the template
 

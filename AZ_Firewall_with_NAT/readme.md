@@ -18,6 +18,6 @@ To make use of Azure Firewall, two rules are created to handle traffic. From my 
   
 ## Instructions for the template
 
-At the very top of main.tf, you have local variables. You'll need add your own subscription ID, tenantID, and a password for the virtual machine. After that, you should be good to go. When I test, I like to put the files on a file share in Azure Cloud Shell since it comes with terraform installed. To see more details around this check out:
+At the very top of main.tf, you have local variables. You'll need add your own subscription ID, tenantID, and a password for the virtual machine. After that, you should be good to go. When I test, I like to put the files on a Storage Account/file share that's used by Azure Cloud Shell.  Azure Cloud Shell comes with Terraform installed. To see more details around this check out:
 
 https://docs.microsoft.com/en-us/azure/cloud-shell/example-terraform-bash

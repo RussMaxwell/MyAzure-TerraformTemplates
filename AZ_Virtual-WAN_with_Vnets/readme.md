@@ -18,6 +18,6 @@ To make use of Azure Virtual WAN, a Virtual WAN Hub is created with two virtual 
   
 ## Instructions for the template
 
-Within the variables.tf file, you'll need to update four variables.  Add your own subscription ID, tenantID, username and a password for the virtual machine. After that, you should be good to go. When I test, I like to put the files on a file share in Azure Cloud Shell since it comes with terraform installed. To see more details around this check out:
+Within the variables.tf file, you'll need to update four variables.  Add your own subscription ID, tenantID, username and a password for the virtual machine. After that, you should be good to go. When I test, I like to put the files on a Storage Account/file share that's used by Azure Cloud Shell.  Azure Cloud Shell comes with Terraform installed. To see more details around this check out:
 
 https://docs.microsoft.com/en-us/azure/cloud-shell/example-terraform-bash
