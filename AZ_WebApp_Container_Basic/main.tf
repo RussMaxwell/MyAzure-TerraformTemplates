@@ -1,9 +1,9 @@
 locals {
-    subscription_id    = "<insertSubscriptionID>"
-    tenant_id          = "<insertTenantID>"
+    subscription_id    = "<input SubscriptionID>"
+    tenant_id          = "<input TenantID>"
     app-location       = "eastus"
     app-resource-group = "Contoso-App-rg"
-    webApp-Name        = "contosodog"
+    webApp-Name        = "<Input Unique WebApplication Name"
 }
 
 
