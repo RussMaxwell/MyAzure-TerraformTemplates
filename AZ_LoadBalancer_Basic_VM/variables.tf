@@ -17,4 +17,3 @@ variable "vmPasswrd" {
     type=string
     default = "<inputPassword>"
 }
-

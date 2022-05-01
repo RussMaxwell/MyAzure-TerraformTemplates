@@ -84,4 +84,3 @@ resource "azurerm_network_interface_nat_rule_association" "associate-natRule-atl
   ip_configuration_name = "atlantaIP-Config"
   nat_rule_id           = azurerm_lb_nat_rule.atlantaRDPAccess.id
 }
-

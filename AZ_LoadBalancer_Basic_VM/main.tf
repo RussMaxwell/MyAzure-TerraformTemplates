@@ -14,17 +14,3 @@ provider "azurerm" {
   tenant_id       = var.tenantID
   features {}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

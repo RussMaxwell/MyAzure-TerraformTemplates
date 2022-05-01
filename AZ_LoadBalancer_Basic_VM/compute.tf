@@ -88,16 +88,3 @@ resource "azurerm_virtual_machine_extension" "atlanta_vm_ext_install_iis" {
 SETTINGS
 depends_on = [azurerm_windows_virtual_machine.boston-vm]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

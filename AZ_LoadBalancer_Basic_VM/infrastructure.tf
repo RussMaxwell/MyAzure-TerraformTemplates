@@ -75,4 +75,3 @@ resource "azurerm_public_ip" "balancer-pip" {
     resource_group_name = azurerm_resource_group.eastcoast-rg.name
     allocation_method   = "Static"
 }
-
